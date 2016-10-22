@@ -1,0 +1,25 @@
+{
+  "name": "leapcopter",
+  "version": "1.0.0",
+  "description": "Control an AR 2.0 Drone with LeapMotion",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlodicelico/leapcopter.git"
+  },
+  "keywords": [
+    "cylon",
+    "nodecopter",
+    "leapmotion",
+    "ardrone"
+  ],
+  "author": "Carlo DiCelico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlodicelico/leapcopter/issues"
+  },
+  "homepage": "https://github.com/carlodicelico/leapcopter#readme"
+}
