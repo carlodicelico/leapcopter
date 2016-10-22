@@ -9,22 +9,36 @@ Cylon.robot({
     ardrone: {
       adaptor: 'ardrone',
       port: '192.168.1.1'
+    },
+    leapmotion: {
+      adaptor: 'leapmotion'
     }
   },
   devices: {
     drone: {
-      driver: 'ardrone'
+      driver: 'ardrone',
+      connection: 'ardrone'
+    },
+    leapmotion: {
+      driver: 'leapmotion',
+      connection: 'leapmotion'
     }
   },
   work: function(my) {
-    my.drone.takeoff();
+    my.leapmotion.on('frame', function(frame) {
+      console.log(frame.toString());
+      if(frame.hands.length > 0) {
+        my.drone.takeoff();
 
-    after((10).seconds(), function() {
-      my.drone.land();
+        after((10).seconds(), function() {
+          my.drone.land();
+        });
+
+        after((10).seconds(), function() {
+          my.drone.stop();
+        });
+      }
     });
 
-    after((10).seconds(), function() {
-      my.drone.stop();
-    });
   }
 }).start();
